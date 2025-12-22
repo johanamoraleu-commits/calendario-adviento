@@ -59,7 +59,12 @@
     if (day === today) {
       card.classList.add("active");
       card.innerText = `🎁 Día ${day}\nHaz clic para abrir`;
-      card.onclick = () => alert("Aquí va el mensaje o regalo del día " + day);
+      card.onclick = () => {
+  document.getElementById("modal-text").innerText =
+    "🎁 Día " + day + "\n\nEste es tu regalo de hoy 💛\n\nAquí puedes poner el mensaje, imagen o instrucciones para reclamarlo.";
+  document.getElementById("modal").style.display = "flex";
+};
+
     } else {
       card.classList.add("disabled");
       card.innerText = `Día ${day}`;
@@ -68,6 +73,38 @@
     calendar.appendChild(card);
   }
 </script>
+<div id="modal" style="
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+">
+  <div style="
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    max-width:400px;
+    text-align:center;
+  ">
+    <p id="modal-text" style="white-space:pre-line;"></p>
+    <button onclick="document.getElementById('modal').style.display='none'"
+      style="
+        margin-top:20px;
+        padding:10px 20px;
+        border:none;
+        background:#c62828;
+        color:white;
+        border-radius:8px;
+        cursor:pointer;
+      ">
+      Cerrar
+    </button>
+  </div>
+</div>
 
 </body>
 </html>
+
