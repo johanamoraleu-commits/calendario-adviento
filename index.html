@@ -1,22 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Calendario de Adviento Digital</title>
-
+  <meta charset="UTF-8" />
+  <title>Calendario de Adviento 🎄</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background: #f5f5f5;
       text-align: center;
-      padding: 20px;
+      padding: 40px;
     }
 
     h1 {
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
 
-    #calendar {
+    .calendar {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    .day {
+      background: #e0e0e0;
+      padding: 20px;
+      border-radius: 10px;
+      cursor: not-allowed;
+      opacity: 0.5;
+      font-weight: bold;
+    }
+
+    .day.active {
+      background: #c62828;
+      color: white;
+      cursor: pointer;
+      opacity: 1;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 90%;
+    }
+
+    .modal img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #c62828;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🎄 Calendario de Adviento</h1>
+<p>Abre solo el día que corresponde 🎁</p>
+
+<div class="calendar" id="calendar"></div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <img id="modal-img" src="" alt="Tarjeta" />
+    <br />
+    <button onclick="closeModal()">Cerrar</button>
+  </div>
+</div>
+
+<script>
+  const startDay = 16;
+  const endDay = 24;
+  const today = new Date().getDate();
+
+  const calendar = document.getElementById("calendar");
+
+  for (let day = startDay; day <= endDay; day++) {
+    const div = document.createElement("div");
+    div.textContent = "Día " + day;
+    div.classList.add("day");
+
+    if (day === today) {
+      div.classList.add("active");
+      div.textContent = "🎁 Día " + day + " – Abrir";
+      div.onclick = () => openDay(day);
+    }
+
+    calendar.appendChild(div);
+  }
+
+  function openDay(day) {
+    const img = document.getElementById("modal-img");
+    img.src = `contents/card-${day}.jpg`;
+    document.getElementById("modal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
