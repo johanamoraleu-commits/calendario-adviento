@@ -1,11 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Calendario de Adviento</title>
+  <meta charset="UTF-8">
+  <title>Calendario de Adviento 🎄</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      opacity: 0.4;
+    }
+    .card.active {
+      opacity: 1;
+      background: #c62828;
+      color: white;
+      font-weight: bold;
+    }
+    .card.disabled {
+      cursor: not-allowed;
+    }
+  </style>
 </head>
 <body>
-  <h1>Calendario de Adviento</h1>
-  <p>Si ves este texto, el archivo funciona 🎄</p>
+
+<h1>🎄 Calendario de Adviento</h1>
+<p>Abre solo el día que corresponde 💫</p>
+
+<div class="calendar" id="calendar"></div>
+
+<script>
+  const startDay = 16;
+  const endDay = 24;
+  const today = new Date().getDate();
+  const calendar = document.getElementById("calendar");
+
+  for (let day = startDay; day <= endDay; day++) {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    if (day === today) {
+      card.classList.add("active");
+      card.innerText = `🎁 Día ${day}\nHaz clic para abrir`;
+      card.onclick = () => alert("Aquí va el mensaje o regalo del día " + day);
+    } else {
+      card.classList.add("disabled");
+      card.innerText = `Día ${day}`;
+    }
+
+    calendar.appendChild(card);
+  }
+</script>
+
 </body>
 </html>
