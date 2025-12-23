@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feliez Navidad Lindurita mia</title>
+  <title>Calendario de Adviento</title>
 
   <style>
     * {
@@ -66,4 +66,83 @@
     .modal-content {
       background: white;
       color: black;
-      border-radiu
+      border-radius: 16px;
+      width: 100%;
+      max-width: 420px;
+      animation: zoomFade 0.3s ease;
+      overflow: hidden;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .close {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      background: #c1121f;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    @keyframes zoomFade {
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* AJUSTES EXTRA PARA PANTALLAS MUY PEQUEÑAS */
+    @media (max-width: 360px) {
+      .calendar {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🎄 Feliz Navidad Lindurita mia 🎄</h1>
+
+  <div class="calendar">
+    <img src="contents/16.jpg" class="day-img" onclick="openCard(16)">
+    <img src="contents/17.jpg" class="day-img" onclick="openCard(17)">
+    <img src="contents/18.jpg" class="day-img" onclick="openCard(18)">
+    <img src="contents/19.jpg" class="day-img" onclick="openCard(19)">
+    <img src="contents/20.jpg" class="day-img" onclick="openCard(20)">
+    <img src="contents/21.jpg" class="day-img" onclick="openCard(21)">
+    <img src="contents/22.jpg" class="day-img" onclick="openCard(22)">
+    <img src="contents/23.jpg" class="day-img" onclick="openCard(23)">
+    <img src="contents/24.jpg" class="day-img" onclick="openCard(24)">
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <img id="cardImage" src="" alt="Tarjeta del día">
+      <button class="close" onclick="closeModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    function openCard(day) {
+      document.getElementById("cardImage").src = `contents/card-${day}.jpg`;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
