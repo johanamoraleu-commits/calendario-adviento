@@ -18,6 +18,17 @@
       align-items: center;
       padding: 20px 10px;
       box-sizing: border-box;
+      .day-img {
+  width: 100%;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.day-img:active {
+  transform: scale(0.95);
+}
+
     }
 
     h1 {
@@ -104,19 +115,19 @@
 
 <body>
 
-  <h1>🎄 Calendario de Adviento 🎁</h1>
+  <h1>🎄 Feliz Navidad Lindura mía 🎄</h1>
 
   <div class="calendar">
-    <div class="day" onclick="openCard(16)">16</div>
-    <div class="day" onclick="openCard(17)">17</div>
-    <div class="day" onclick="openCard(18)">18</div>
-    <div class="day" onclick="openCard(19)">19</div>
-    <div class="day" onclick="openCard(20)">20</div>
-    <div class="day" onclick="openCard(21)">21</div>
-    <div class="day" onclick="openCard(22)">22</div>
-    <div class="day" onclick="openCard(23)">23</div>
-    <div class="day" onclick="openCard(24)">24</div>
-  </div>
+  <img src="contents/16.jpg" class="day-img" onclick="openCard(16)">
+  <img src="contents/17.jpg" class="day-img" onclick="openCard(17)">
+  <img src="contents/18.jpg" class="day-img" onclick="openCard(18)">
+  <img src="contents/19.jpg" class="day-img" onclick="openCard(19)">
+  <img src="contents/20.jpg" class="day-img" onclick="openCard(20)">
+  <img src="contents/21.jpg" class="day-img" onclick="openCard(21)">
+  <img src="contents/22.jpg" class="day-img" onclick="openCard(22)">
+  <img src="contents/23.jpg" class="day-img" onclick="openCard(23)">
+  <img src="contents/24.jpg" class="day-img" onclick="openCard(24)">
+</div>
 
   <!-- MODAL -->
   <div id="modal" class="modal" onclick="closeModal()">
@@ -139,3 +150,4 @@
 
 </body>
 </html>
+
