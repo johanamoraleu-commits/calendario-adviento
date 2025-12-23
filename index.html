@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Calendario de Adviento</title>
 
   <style>
@@ -13,22 +12,11 @@
       background: linear-gradient(135deg, #7b2cbf, #c1121f);
       color: white;
       min-height: 100vh;
+      padding: 20px 10px;
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px 10px;
-      box-sizing: border-box;
-      day-img {
-  width: 100%;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: transform 0.25s ease;
-}
-
-.day-img:active {
-  transform: scale(0.95);
-}
-
     }
 
     h1 {
@@ -37,29 +25,24 @@
       text-align: center;
     }
 
-    /* CALENDARIO */
+    /* GRID */
     .calendar {
       width: 100%;
       max-width: 420px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       gap: 14px;
     }
 
-    .day {
-      background: rgba(255,255,255,0.2);
+    .day-img {
+      width: 100%;
       border-radius: 14px;
-      padding: 22px 0;
-      font-size: 1.2rem;
-      text-align: center;
       cursor: pointer;
-      transition: transform 0.25s ease, background 0.25s ease;
-      user-select: none;
+      transition: transform 0.25s ease;
     }
 
-    .day:active {
+    .day-img:active {
       transform: scale(0.95);
-      background: rgba(255,255,255,0.35);
     }
 
     /* MODAL */
@@ -118,16 +101,16 @@
   <h1>🎄 Feliz Navidad Lindurita mia 🎄</h1>
 
   <div class="calendar">
-  <img src="contents/16.jpg" class="day-img" onclick="openCard(16)">
-  <img src="contents/17.jpg" class="day-img" onclick="openCard(17)">
-  <img src="contents/18.jpg" class="day-img" onclick="openCard(18)">
-  <img src="contents/19.jpg" class="day-img" onclick="openCard(19)">
-  <img src="contents/20.jpg" class="day-img" onclick="openCard(20)">
-  <img src="contents/21.jpg" class="day-img" onclick="openCard(21)">
-  <img src="contents/22.jpg" class="day-img" onclick="openCard(22)">
-  <img src="contents/23.jpg" class="day-img" onclick="openCard(23)">
-  <img src="contents/24.jpg" class="day-img" onclick="openCard(24)">
-</div>
+    <img src="contents/16.jpg" class="day-img" onclick="openCard(16)">
+    <img src="contents/17.jpg" class="day-img" onclick="openCard(17)">
+    <img src="contents/18.jpg" class="day-img" onclick="openCard(18)">
+    <img src="contents/19.jpg" class="day-img" onclick="openCard(19)">
+    <img src="contents/20.jpg" class="day-img" onclick="openCard(20)">
+    <img src="contents/21.jpg" class="day-img" onclick="openCard(21)">
+    <img src="contents/22.jpg" class="day-img" onclick="openCard(22)">
+    <img src="contents/23.jpg" class="day-img" onclick="openCard(23)">
+    <img src="contents/24.jpg" class="day-img" onclick="openCard(24)">
+  </div>
 
   <!-- MODAL -->
   <div id="modal" class="modal" onclick="closeModal()">
@@ -150,4 +133,3 @@
 
 </body>
 </html>
-
