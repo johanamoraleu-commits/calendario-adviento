@@ -13,8 +13,8 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #7b2cbf, #c1121f);
-      color: white;
+      background: #ffffff; /* FONDO BLANCO HOME */
+      color: #333;
       min-height: 100vh;
       padding: 20px 12px;
       display: flex;
@@ -26,9 +26,10 @@
       margin: 10px 0 20px;
       font-size: 1.7rem;
       text-align: center;
+      color: #c1121f;
     }
 
-    /* GRID CORREGIDO */
+    /* GRID */
     .calendar {
       width: 100%;
       max-width: 420px;
@@ -37,7 +38,7 @@
       gap: 12px;
     }
 
-    /* IMÁGENES */
+    /* IMÁGENES CERRADAS */
     .day-img {
       width: 100%;
       height: auto;
@@ -100,7 +101,7 @@
       }
     }
 
-    /* AJUSTES EXTRA PARA PANTALLAS MUY PEQUEÑAS */
+    /* EXTRA PARA PANTALLAS PEQUEÑAS */
     @media (max-width: 360px) {
       .calendar {
         gap: 10px;
@@ -111,18 +112,18 @@
 
 <body>
 
-  <h1>🎄 Feliz Navidad Lindurita mia 🎄</h1>
+  <h1>🎄 Calendario de Adviento 🎁</h1>
 
   <div class="calendar">
-    <img src="contents/16.jpg" class="day-img" onclick="openCard(16)">
-    <img src="contents/17.jpg" class="day-img" onclick="openCard(17)">
-    <img src="contents/18.jpg" class="day-img" onclick="openCard(18)">
-    <img src="contents/19.jpg" class="day-img" onclick="openCard(19)">
-    <img src="contents/20.jpg" class="day-img" onclick="openCard(20)">
-    <img src="contents/21.jpg" class="day-img" onclick="openCard(21)">
-    <img src="contents/22.jpg" class="day-img" onclick="openCard(22)">
-    <img src="contents/23.jpg" class="day-img" onclick="openCard(23)">
-    <img src="contents/24.jpg" class="day-img" onclick="openCard(24)">
+    <img src="contents/16.jpg" class="day-img" onclick="openCard(16)" alt="Día 16">
+    <img src="contents/17.jpg" class="day-img" onclick="openCard(17)" alt="Día 17">
+    <img src="contents/18.jpg" class="day-img" onclick="openCard(18)" alt="Día 18">
+    <img src="contents/19.jpg" class="day-img" onclick="openCard(19)" alt="Día 19">
+    <img src="contents/20.jpg" class="day-img" onclick="openCard(20)" alt="Día 20">
+    <img src="contents/21.jpg" class="day-img" onclick="openCard(21)" alt="Día 21">
+    <img src="contents/22.jpg" class="day-img" onclick="openCard(22)" alt="Día 22">
+    <img src="contents/23.jpg" class="day-img" onclick="openCard(23)" alt="Día 23">
+    <img src="contents/24.jpg" class="day-img" onclick="openCard(24)" alt="Día 24">
   </div>
 
   <!-- MODAL -->
