@@ -3,46 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendario de Adviento</title>
+  <title>Feliez Navidad Lindurita mia</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #7b2cbf, #c1121f);
       color: white;
       min-height: 100vh;
-      padding: 20px 10px;
-      box-sizing: border-box;
+      padding: 20px 12px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
     h1 {
-      margin: 10px 0 25px;
-      font-size: 1.8rem;
+      margin: 10px 0 20px;
+      font-size: 1.7rem;
       text-align: center;
     }
 
-    /* GRID */
+    /* GRID CORREGIDO */
     .calendar {
       width: 100%;
       max-width: 420px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
     }
 
+    /* IMÁGENES */
     .day-img {
       width: 100%;
+      height: auto;
+      display: block;
       border-radius: 14px;
       cursor: pointer;
-      transition: transform 0.25s ease;
+      transition: transform 0.2s ease;
     }
 
     .day-img:active {
-      transform: scale(0.95);
+      transform: scale(0.96);
     }
 
     /* MODAL */
@@ -55,81 +61,9 @@
       align-items: center;
       z-index: 1000;
       padding: 15px;
-      box-sizing: border-box;
     }
 
     .modal-content {
       background: white;
       color: black;
-      border-radius: 16px;
-      width: 100%;
-      max-width: 420px;
-      animation: zoomFade 0.35s ease;
-      overflow: hidden;
-    }
-
-    .modal-content img {
-      width: 100%;
-      display: block;
-    }
-
-    .close {
-      width: 100%;
-      padding: 14px;
-      border: none;
-      background: #c1121f;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    @keyframes zoomFade {
-      from {
-        transform: scale(0.85);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <h1>🎄 Feliz Navidad Lindurita mia 🎄</h1>
-
-  <div class="calendar">
-    <img src="contents/16.jpg" class="day-img" onclick="openCard(16)">
-    <img src="contents/17.jpg" class="day-img" onclick="openCard(17)">
-    <img src="contents/18.jpg" class="day-img" onclick="openCard(18)">
-    <img src="contents/19.jpg" class="day-img" onclick="openCard(19)">
-    <img src="contents/20.jpg" class="day-img" onclick="openCard(20)">
-    <img src="contents/21.jpg" class="day-img" onclick="openCard(21)">
-    <img src="contents/22.jpg" class="day-img" onclick="openCard(22)">
-    <img src="contents/23.jpg" class="day-img" onclick="openCard(23)">
-    <img src="contents/24.jpg" class="day-img" onclick="openCard(24)">
-  </div>
-
-  <!-- MODAL -->
-  <div id="modal" class="modal" onclick="closeModal()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <img id="cardImage" src="" alt="Tarjeta del día">
-      <button class="close" onclick="closeModal()">Cerrar</button>
-    </div>
-  </div>
-
-  <script>
-    function openCard(day) {
-      document.getElementById("cardImage").src = `contents/card-${day}.jpg`;
-      document.getElementById("modal").style.display = "flex";
-    }
-
-    function closeModal() {
-      document.getElementById("modal").style.display = "none";
-    }
-  </script>
-
-</body>
-</html>
+      border-radiu
